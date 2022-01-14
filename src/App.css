@@ -1,0 +1,10 @@
+img{
+    width: 150px;
+}
+
+.mission{
+    border: solid 1px #84abcd;
+    margin-bottom: 4px;
+    width: 350px;
+    text-align: center;
+}
