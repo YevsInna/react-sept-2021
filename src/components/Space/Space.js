@@ -5,10 +5,10 @@ const Space = () => {
 
     const [fligtsList, setFligtsList] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://api.spacexdata.com/v3/launches/')
             .then(value => value.json())
-            .then(value => setFligtsList(value.filter(value=> value.launch_year !=='2020')));
+            .then(value => setFligtsList(value.filter(value => value.launch_year !== '2020')));
     }, []);
 
     return (
