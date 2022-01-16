@@ -1,0 +1,10 @@
+.wrap {
+    display: flex;
+}
+
+.details {
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #f1f2f2;
+    height: fit-content;
+}
