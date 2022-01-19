@@ -1,0 +1,25 @@
+.header{
+    min-height: 70px;
+    background-color: #3b2424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header a {
+    text-decoration: none;
+    color: #d9cebe;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.header a[class='active']{
+    color: white;
+    text-decoration: underline;
+}
+.outlet{
+    margin: 0 auto;
+    width: 95%;
+    height: 85vh;
+
+}
