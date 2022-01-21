@@ -1,0 +1,18 @@
+.post-details{
+    border: solid 1px #2d4242;
+    border-radius: 10px;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 30px;
+}
+button{
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #a9c0c0;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #2d4242;
+    color: #cadbdb;
+}

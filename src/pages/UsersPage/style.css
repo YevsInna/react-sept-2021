@@ -1,0 +1,10 @@
+.users{
+    display: flex;
+    justify-content: space-evenly;
+}
+.users-left{
+    width: 40%;
+}
+.users-right{
+    width: 55%;
+}

@@ -1,0 +1,11 @@
+.posts{
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+.posts-left{
+    width: 45%;
+}
+.posts-right{
+    width: 45%;
+}

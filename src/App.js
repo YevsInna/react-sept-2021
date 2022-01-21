@@ -32,7 +32,7 @@ const App = () => {
                         </Route>
 
                         <Route path={':id/albums'} element={<AlbumsPage/>}>
-                            <Route path={':albumId/photos'} element={<PhotosPage/>}/>
+                            <Route path={':id/photos'} element={<PhotosPage/>}/>
                         </Route>
                     </Route>
 
