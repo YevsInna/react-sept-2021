@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css'
 import {Link} from "react-router-dom";
-import {PostDetailsPage} from "../../pages";
+
 
 const Post = ({post}) => {
     const {id, title, body} = post;

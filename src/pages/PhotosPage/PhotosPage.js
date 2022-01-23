@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
 import {userService} from "../../services/user.service";
 import {Photo} from "../../components/Photo/Photo";
 
