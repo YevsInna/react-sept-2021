@@ -6,11 +6,11 @@ import {Photo} from "../../components/Photo/Photo";
 
 const PhotosPage = () => {
     const [photos,setPhotos] = useState([]);
-    const {id} = useParams();
+    const {albumId} = useParams();
 
     useEffect(()=>{
-        userService.getPhotosById(id).then(value => setPhotos(value))
-    },[id]);
+        userService.getPhotosById(albumId).then(value => setPhotos(value))
+    },[albumId]);
 
     return (
         <div>
