@@ -4,7 +4,7 @@ import {carService} from "../../services/car.service";
 import {Car} from "../Car/Car";
 import '../style.css'
 
-const Cars = ({trigger}) => {
+const Cars = ({trigger, update, setCarForUpdate}) => {
     const [cars,setCars] = useState([]);
     useEffect(()=>{
         carService.getAll().then(value => setCars([...value]))
@@ -13,7 +13,7 @@ const Cars = ({trigger}) => {
     return (
         <div className={'cars'}>
             {
-                cars.map(car=><Car key={car.id} car={car}/>)
+                cars.map(car=><Car key={car.id} car={car} update={update} setCarForUpdate={setCarForUpdate}/>)
             }
         </div>
     );

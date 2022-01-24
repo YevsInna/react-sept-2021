@@ -5,14 +5,13 @@ import {Cars, Form} from "./components";
 
 const App = () => {
     const [trigger,setTrigger] = useState(null);
+    const [carForUpdate, setCarForUpdate] = useState({});
 
-    const update = data=>{
-        setTrigger(data)
-    }
+
     return (
         <div>
-            <Form update={update}/>
-            <Cars trigger={trigger}/>
+            <Form update={setTrigger} carForUpdate={carForUpdate}/>
+            <Cars trigger={trigger} update={setTrigger} setCarForUpdate={setCarForUpdate}/>
         </div>
     );
 };
