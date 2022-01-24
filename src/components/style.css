@@ -1,0 +1,17 @@
+.car{
+    background-color: #e4f5ef;
+    padding: 10px;
+    margin: 5px;
+    width: 150px;
+    text-align: center;
+}
+.cars{
+    display: flex;
+    flex-wrap: wrap;
+}
+.form{
+    background-color: #b8d1c8;
+    width: 250px;
+    padding: 5px;
+    text-align: right;
+}
