@@ -1,11 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import EpisodesPage from "../../pages/EpisodesPage/EpisodesPage";
 
 import '../styles.css'
 
 const Header = () => {
     return (
         <div className={'header'}>
-            <h1>Rick and Morty episodes</h1>
+            <Link to={'/episode'}>Rick and Morty episodes</Link>
         </div>
     );
 };
