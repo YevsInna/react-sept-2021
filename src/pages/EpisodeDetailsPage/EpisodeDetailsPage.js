@@ -19,6 +19,7 @@ const EpisodeDetailsPage = () => {
                     <div>
                         <div>Name - {details.name}, gender - {details.gender}</div>
                         <div>Status - {details.status}, species-  {details.species}</div>
+                        <img src={details.image} alt="photo"/>
 
                     </div>
                 )
