@@ -6,19 +6,40 @@ import {episodeService} from "../../services/episode.service";
 import '../styles.css'
 
 const EpisodesPage = () => {
+    const [numberPage, setNumberPage] = useState();
+
+    const [page, setPage] = useState(1);
+
     const [episodes, setEpisodes] = useState([]);
 
     useEffect(() => {
-       episodeService.getAll().then(value => setEpisodes([...value.results]))
-    }, [])
+        episodeService.getEpisodeByPage(page).then(value => {
+            setEpisodes([...value.results]);
+            setNumberPage(value.info.pages)
+        });
+    }, [page]);
+
+    const nextPage = () => {
+        if (page < numberPage) {
+            setPage(page + 1)
+        }
+    };
+
+    const previousPage = () => {
+        setPage(page - 1)
+    };
 
     return (
         <div>
-
-            <div className={'episodes'}>
+            <h1>Rick and Morty episodes</h1>
+            <div>
                 {
-                    episodes.map(item => <Episode key={item.id} item={item}/>)
+                    episodes.map(episode => <Episode key={episode.id} episodeDetails={episode}/>)
                 }
+            </div>
+            <div>
+                <button onClick={previousPage}>Previous page</button>
+                <button onClick={nextPage}>Next page</button>
             </div>
             <Outlet/>
         </div>

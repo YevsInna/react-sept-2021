@@ -13,10 +13,7 @@ const App = () => {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'episode'} element={<EpisodesPage/>}/>
-                    <Route path={'episode/:id'} element={<EpisodeDetailsPage/>}>
-                        <Route path={'character/:characterId'} element={<CharactersPage/>}/>
-                    </Route>
-
+                    <Route path={'episodeDetails'} element={<EpisodeDetailsPage/>}/>
                 </Route>
             </Routes>
         </div>
