@@ -3,3 +3,9 @@
     gap:50px;
     margin: 30px;
 }
+.pets{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}

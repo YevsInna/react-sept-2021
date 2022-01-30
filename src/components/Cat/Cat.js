@@ -1,11 +1,14 @@
 import React from 'react';
 
+import '../style.css'
+
 const Cat = ({cat, deleteCat}) => {
-const{id} = cat;
+
+
     return (
-        <div>
+        <div className={'pet'}>
             <div>{cat}</div>
-            <button onClick={()=>deleteCat(id)}>Delete</button>
+            <button onClick={()=>deleteCat(cat)}>Delete</button>
         </div>
     );
 };
