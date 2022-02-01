@@ -15,11 +15,11 @@ export const getAllCars = createAsyncThunk(
 
 export const createCar = createAsyncThunk(
     'carSlice/createCar',
-    async ({data:newCar, id},{dispatch})=>{
+    async ({data: newCar, id}, {dispatch}) => {
         try {
-           const data = await carService.create(newCar);
-           dispatch(addCar({data}))
-        }catch (e) {
+            const data = await carService.create(newCar);
+            dispatch(addCar({data}))
+        } catch (e) {
             console.log(e)
         }
     }
@@ -27,11 +27,11 @@ export const createCar = createAsyncThunk(
 
 export const deleteCarThunk = createAsyncThunk(
     'carSlice/deleteCarThunk',
-    async ({id},{dispatch})=>{
+    async ({id}, {dispatch}) => {
         try {
-           await carService.deleteById(id)
+            await carService.deleteById(id)
             dispatch(deleteCar({id}))
-        }catch (e) {
+        } catch (e) {
             console.log(e)
         }
     }
@@ -39,11 +39,11 @@ export const deleteCarThunk = createAsyncThunk(
 
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({data:car,id},{dispatch})=>{
+    async ({data: car, id}, {dispatch}) => {
         try {
             await carService.updateById(id)
             dispatch(updateCar({id}))
-        }catch (e) {
+        } catch (e) {
             console.log(e)
         }
     }
@@ -55,8 +55,10 @@ const carSlice = createSlice({
 
     initialState: {
         cars: [],
+        carForUpdate: null,
         status: null,
         error: null
+
     },
 
     reducers: {
@@ -66,9 +68,9 @@ const carSlice = createSlice({
         deleteCar: (state, action) => {
             state.cars = state.cars.filter(car => car.id !== action.payload.id)
         },
-        // updateCar:(state,action)=>{
-        //
-        // }
+        carToUpdate: (state, action) => {
+            // state.carForUpdate = action.payload.car
+        }
     },
 
     extraReducers: {
@@ -90,5 +92,5 @@ const carSlice = createSlice({
 
 const carReducer = carSlice.reducer;
 
-export const {addCar, deleteCar} = carSlice.actions;
+export const {addCar, deleteCar, carToUpdate} = carSlice.actions;
 export default carReducer
