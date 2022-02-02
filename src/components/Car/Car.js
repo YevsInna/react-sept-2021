@@ -17,7 +17,7 @@ const Car = ({car}) => {
                 <div>Year: {year}</div>
             </div>
             <button onClick={()=>dispatch(deleteCarThunk({id}))}>Delete</button>
-            <button onClick={()=>dispatch(carToUpdate({car}))}>Update</button>
+            {/*<button onClick={()=>dispatch(carToUpdate({car}))}>Update</button>*/}
         </div>
     );
 };
