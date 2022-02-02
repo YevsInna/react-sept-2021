@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {deleteCar, deleteCarThunk, carToUpdate} from "../../store";
+import {carToUpdate,deleteCarThunk} from "../../store/car.slice"
 import './style.css'
 
 const Car = ({car}) => {

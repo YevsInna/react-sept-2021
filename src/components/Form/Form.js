@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form"
 import {useDispatch, useSelector} from "react-redux";
-import {addCar, createCar} from "../../store";
+import {carForUpdate, createCar} from "../../store";
 
 const Form = () => {
     const {carForUpdate} = useSelector(state => state.cars);
-   const {handleSubmit,register,reset} = useForm();
-   const dispatch = useDispatch();
+    const {handleSubmit, register, reset, setValue} = useForm();
+    const dispatch = useDispatch();
 
 
-   const submit = (data)=>{
-       dispatch(createCar({data}))
-       reset()
-   }
+    const submit = (data) => {
+        dispatch(createCar({data}))
+        reset()
+    }
+
+    useEffect(() => {
+        if (carForUpdate) {
+            setValue('model', carForUpdate.model)
+            setValue('price', carForUpdate.price)
+            setValue('year', carForUpdate.year)
+        }
+    }, [carForUpdate]);
 
     return (
         <div>
