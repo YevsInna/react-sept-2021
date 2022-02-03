@@ -1,0 +1,11 @@
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.done {
+    text-decoration: line-through;
+}
