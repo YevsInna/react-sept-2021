@@ -42,7 +42,17 @@
 //      gender:'male'
 //     }
 //
-const user:{name:string,age:number, gender:string}={name:"Max", age:27, gender: "male"}
+interface IUser {
+ name:string;
+ age:number;
+ gender:string;
+}
+const user:IUser={
+ name:'Max',
+ age:27,
+ gender:'male'
+}
+
 
 function sum(a:number,b:number):number{
  return a+b
@@ -52,11 +62,11 @@ function showSum(a:number,b:number):void{
  console.log(a + b);
 }
 //
-function incAge(someUser: {age:number}, inc:number):object{
+function incAge(someUser: IUser, inc:number):IUser{
  someUser.age+=inc
  return someUser
 }
 //
 console.log(sum(1, 2));
 showSum(2,3)
-incAge({age:38}, 2)
+incAge(user, 2)
