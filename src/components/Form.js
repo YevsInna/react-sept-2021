@@ -14,7 +14,7 @@ const Form = () => {
         e.preventDefault()
         //записуємо через action addTodo (із слайсу, з редьюсерсів):
         dispatch(addTodo({todo: e.target.todo.value}))
-        dispatch(allInc())
+        // dispatch(allInc())
         e.target.reset()
     }
 

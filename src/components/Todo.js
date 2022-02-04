@@ -14,7 +14,7 @@ const Todo = ({todo}) => {
             <div className={'todo-left'}><input type="checkbox" value={status} onChange={() => dispatch(changeStatus({id}))}/>
                 <div className={status ? 'done' : ''}>{name}</div>
             </div>
-            <button onClick={() => dispatch(deleteTodo({id}))}>Delete</button>
+            <button onClick={() => dispatch(deleteTodo({id, status}))}>Delete</button>
         </div>
     );
 };

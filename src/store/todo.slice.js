@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     todos: [],
-    all: 0,
+    // all: 0,
     completed: 0
 }
 
@@ -34,9 +34,9 @@ const todoSlice = createSlice({
                 state.completed = state.completed - 1
             }
         },
-        allInc:(state,action)=> {
-            state.all = state.all+1;
-        }
+        // allInc:(state,action)=> {
+        //     state.all = state.all+1;
+        // }
     }
 });
 
