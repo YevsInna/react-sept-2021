@@ -1,0 +1,8 @@
+.wrap{
+    background: #f8e2ee;
+    border: solid 1px #f4b8d9;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 50px;
+    margin: auto;
+}

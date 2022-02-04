@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 
-import {addTodo} from "../store";
+import {addTodo,allInc} from "../store";
 import './style.css'
 
 
@@ -14,11 +14,12 @@ const Form = () => {
         e.preventDefault()
         //записуємо через action addTodo (із слайсу, з редьюсерсів):
         dispatch(addTodo({todo: e.target.todo.value}))
+        dispatch(allInc())
         e.target.reset()
     }
 
     return (
-        <form className={'todo'} onSubmit={submit}>
+        <form className={'form'} onSubmit={submit}>
             <input type="text" name={'todo'}/>
             <button>Save</button>
         </form>

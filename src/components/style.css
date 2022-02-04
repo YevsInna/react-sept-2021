@@ -1,9 +1,50 @@
-.todo {
+.form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
+    gap: 10px;
+}
+
+.form input {
+    border: 1px solid #f4b8d9;
+    border-radius: 10px;
+    height: 40px;
+    width: 200px;
+}
+
+.form button {
+    margin-left: 20px;
+    border: none;
+    background: #f4b8d9;
+    padding: 5px 15px;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 15px;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     font-size: 20px;
+    gap: 10px;
+}
+.todo-left{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo button {
+    margin-left: 20px;
+    border: none;
+    background: #f4b8d9;
+    padding: 5px 15px;
+    border-radius: 10px;
+    width: 100px;
 }
 
 .done {
