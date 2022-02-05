@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+   padding: 10px;
     gap: 20px;
+    border: solid 1px #d6f5f5;
+    border-radius: 10px;
 }

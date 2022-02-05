@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import {carService} from "../services";
+import {logDOM} from "@testing-library/react";
 
 export const getAllCars = createAsyncThunk(
     'carSlice/getAllCars',
@@ -37,18 +38,19 @@ export const deleteCarThunk = createAsyncThunk(
     }
 );
 
-// export const updateCar = createAsyncThunk(
-//     'carSlice/updateCar',
-//     async ({car, id}, {dispatch}) => {
-//         const newCar = await carService.updateById(id, car)
-//         // dispatch(updateCar({car:newCar})
-//         return {car: newCar}
-//     }
-//    );
+export const updateCarThunk = createAsyncThunk(
+    'carSlice/updateCar',
+    async ({id:{id},car}, {dispatch}) => {
+
+        const newCar = await carService.updateById(id, car)
+        dispatch(updateCar({car:newCar}))
+        return {car: newCar}
+    }
+   );
 
 const initialState = {
     cars: [],
-    // carForUpdate: null,
+    carForUpdate: null,
     status: null,
     error: null
 }
@@ -62,9 +64,9 @@ const carSlice = createSlice({
         deleteCar: (state, action) => {
             state.cars = state.cars.filter(car => car.id !== action.payload.id)
         },
-        // carToUpdate: (state, action) => {
-        //     state.carForUpdate = action.payload.car
-        // }
+        updateCar: (state, action) => {
+            state.carForUpdate = action.payload.car
+        }
     },
 
     extraReducers: {
@@ -86,5 +88,5 @@ const carSlice = createSlice({
 
 const carReducer = carSlice.reducer;
 
-export const {addCar, deleteCar} = carSlice.actions;
+export const {addCar, deleteCar,updateCar} = carSlice.actions;
 export default carReducer

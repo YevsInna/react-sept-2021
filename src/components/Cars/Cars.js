@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import Car from "../Car/Car";
+
+import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
+import './style.css'
 
 const Cars = () => {
     const {cars,status,error} = useSelector(state => state['carReducer']);
@@ -12,7 +14,7 @@ const Cars = () => {
     },[])
 
     return (
-        <div>
+        <div className={'cars'}>
             {
                 status === 'pending' && <h2>Loading...</h2>
             }
@@ -26,4 +28,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export {Cars};

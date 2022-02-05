@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {carToUpdate,deleteCarThunk} from "../../store/car.slice"
+import {updateCar, deleteCarThunk, updateCarThunk} from "../../store/car.slice"
 import './style.css'
 
 const Car = ({car}) => {
@@ -17,9 +17,9 @@ const Car = ({car}) => {
                 <div>Year: {year}</div>
             </div>
             <button onClick={()=>dispatch(deleteCarThunk({id}))}>Delete</button>
-            {/*<button onClick={()=>dispatch(carToUpdate({car}))}>Update</button>*/}
+            <button onClick={()=>dispatch(updateCarThunk({car}))}>Update</button>
         </div>
     );
 };
 
-export default Car;
+export {Car};

@@ -1,12 +1,20 @@
-import Form from "./components/Form/Form";
-import Cars from "./components/Cars/Cars";
+import {Routes,Route} from "react-router-dom";
+
+import {Header} from "./components";
+import {CarsPage, CommentsPage, PostsPage, UsersPage} from "./pages";
 
 const App = () => {
 
     return (
         <div>
-            <Form/>
-            <Cars/>
+            <Routes>
+                <Route path={'/'} element = {<Header/>}>
+                    <Route path={'/cars'} element={<CarsPage/>}/>
+                    <Route path={'/users'} element = {<UsersPage/>}/>
+                    <Route path={'/posts'} element = {<PostsPage/>}/>
+                    <Route path={'/comments'} element = {<CommentsPage/>}/>
+                </Route>
+            </Routes>
         </div>
     );
 };
